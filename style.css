@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body,td,th {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a:link {
+	color: #061DC6;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #061DC6;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #061DC6;
+}
