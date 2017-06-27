@@ -1,1 +1,1 @@
-<div id="pageFooter">Test</div>
+<div id="pageFooter">Copyright</div>

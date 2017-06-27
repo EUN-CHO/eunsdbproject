@@ -1,10 +1,11 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+<?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$db_name = "echo_mystore";
 
-<body>
-</body>
-</html>
+mysql_connect("$host", "$username", "$password") or die("Connection Failure");
+mysql_select_db("$db_name") or die("NO database");
+
+echo"SUCCESSFUL CONNECTION!"
+?>
