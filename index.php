@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Store Homepage</title>
+<title>E.CHO Store Homepage</title>
 <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
 </head>
 
