@@ -13,10 +13,10 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
 
     include "../storescripts/connect_to_mysql.php"; 
 
-    $sql = mysql_query("SELECT id 
+    $mysql = mysql_query("SELECT id 
 						FROM admin WHERE username='$manager' AND password='$password' LIMIT 1"); 
 	
-    $existCount = mysql_num_rows($sql); 
+    $existCount = mysql_num_rows($mysql); 
 
     if ($existCount == 1){
 	     while($row = mysql_fetch_array($sql)){ 
@@ -30,7 +30,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])){
          exit();
 
     } else{
-		echo 'Input information is wrong! <a href="index.php">Go Back to HOME</a>';
+		echo 'Input information is wrong! <a href="http://localhost/DBproj/index.php">Go Back to HOME</a>';
 		exit();
 	}
 }
