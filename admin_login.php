@@ -7,19 +7,23 @@ if (isset($_SESSION["manager"])) {
 ?>
 
 <?php 
+include("connect_to_mysql.php");
+
 if (isset($_POST["username"]) && isset($_POST["password"])){
 	$manager = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["username"]); 
     $password = preg_replace('#[^A-Za-z0-9]#i', '', $_POST["password"]); 
 
     include "../storescripts/connect_to_mysql.php"; 
 
-    $mysql = mysql_query("SELECT id 
-						FROM admin WHERE username='$manager' AND password='$password' LIMIT 1"); 
 	
-    $existCount = mysql_num_rows($mysql); 
-
+	$mysql = "SELECT id 
+			FROM admin WHERE username='$manager' AND password='$password' LIMIT 1"; 
+	
+	$result = mysqli_query($con, $mysql);
+    $existCount = mysqli_num_rows($result); 
+	
     if ($existCount == 1){
-	     while($row = mysql_fetch_array($sql)){ 
+	     while($row = mysqli_fetch_array($result)){ 
              $id = $row["id"];
 		 }
 		 $_SESSION["id"] = $id;
