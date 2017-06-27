@@ -39,7 +39,7 @@ if (mysql_query($mysqlCommand)){
 }
 */
 
- if ($con->query($mysqlCommand) === TRUE) {
+ if ($con->query($mysqlCommand) == TRUE) {
     echo "Table created successfully";
 } else {
     echo "Error creating table: " . $con->error;

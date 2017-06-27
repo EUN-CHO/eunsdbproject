@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($con, "SELECT name FROM users WHERE email = '" . $email. "' and password = '" . md5($password) . "'");
 	$n = $result->num_rows;
     if ($n != 0) {
-		echo $n;
+		//echo $n;
 		echo "<script language='javascript' type='text/javascript'> location.href='http://localhost/DBproj/storeuser/user_index.php' </script>";
         //$_SESSION['usr_id'] = $row['id'];
         //$_SESSION['usr_name'] = $row['name'];

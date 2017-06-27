@@ -5,7 +5,7 @@
       <td width="493">&nbsp;</td>
     </tr>
     <tr>
-      <td height="28" colspan="2"><a href="http://localhost/DBproj/index.php">HOME</a> <a href="http://localhost/DBproj/storeadmin/admin_login.php">LOGIN(manager)</a> <a href="#">Link 2</a> <a href="#">Link3</a></td>
+      <td height="28" colspan="2"><a href="http://localhost/DBproj/index.php">HOME</a> <a href="http://localhost/DBproj/storeadmin/admin_login.php">LOGIN(manager)</a> <a href="http://localhost/DBproj/storeuser/user_login.php">LOGIN(user)</a> <a href="http://localhost/DBproj/storeuser/register.php">SignUp(user)</a></td>
       </tr>
     <tr>
       <td height="28" colspan="2">&nbsp;</td>
