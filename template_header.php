@@ -8,9 +8,9 @@
 
 <body>
 <div align="center" id="mainWrapper">
-  <?php include_once("template_header.php");?>
+  
   <div id="pageContent">Test</div>
-  <?php include_once("template_footer.php");?>
+  <div id="pageFooter">Test</div>
 </div>
 </body>
 </html>
