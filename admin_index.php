@@ -5,23 +5,6 @@ if(isset($_SESSION["manager"])!=""){
 	exit();
 }
 
-/*
-$managerID = preg_replace('#[^0-9]#i', '', $_SESSION["id"]);
-$manager = preg_replace('#[^A-Za-z0-9]#i', '', $_SESSION["manager"]); 
-$password = preg_replace('#[^A-Za-z0-9]#i', '', $_SESSION["password"]); 
-
-include("../storescripts/connect_to_mysql.php"); 
-
-$mysql = "SELECT id FROM admin WHERE id='$managerID' AND username='$manager' AND password='$password' LIMIT 1";
-	
-$result = mysqli_query($con, $mysql);
-$existCount = mysqli_num_rows($result);
-		
-if ($existCount == 0) {
-	 echo "You are not an existing manager.";
-     exit();
-}
-*/
 ?>
 
 <!doctype html>
@@ -40,7 +23,7 @@ if ($existCount == 0) {
 		  <p><strong><em>Hello E.CHO STORE manager. What would you like to do today?</em></strong></p>
 		  <p><a href="inventory_list.php">Manage inventory</a></p>
 		  <p><a href="user_view_list.php">View users</a></p>
-		  <p><a href="#">Manage payments</a></p> 
+		  <p><a href="try_out.php">Try out JOIN and TRANSACTION</a></p> 
 		</div>
 		<br />
 	<br />

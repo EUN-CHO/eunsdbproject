@@ -31,13 +31,7 @@ $mysqlCommand = "CREATE TABLE transactions (
 			PRIMARY KEY (id),
 			UNIQUE KEY txn_id (txn_id)
 			)";
-/*	
-if (mysql_query($mysqlCommand)){
-	echo"Admin table succeccfully created!";
-} else{
-	echo"ERROR! Admin table not created.";
-}
-*/
+
 
  if ($con->query($mysqlCommand) == TRUE) {
     echo "Table created successfully";

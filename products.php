@@ -5,7 +5,6 @@ ini_set('display_errors', '1');
 
 <?php 
 
-// Check to see the URL variable is set and that it exists in the database
 
 if (isset($_GET['id'])) {
 	include "storescripts/connect_to_mysql.php"; 
@@ -13,7 +12,7 @@ if (isset($_GET['id'])) {
 
 	$sql = mysqli_query($con, "SELECT * FROM products WHERE id='$id' LIMIT 1");
 
-	$productCount = $sql->num_rows; // count the output amount
+	$productCount = $sql->num_rows; 
 
     if ($productCount > 0) {
 		while($row = mysqli_fetch_array($sql)){ 

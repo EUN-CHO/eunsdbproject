@@ -5,29 +5,20 @@ if (isset($_SESSION["manager"])!="") {
     exit();
 }
 
-//check if form is submitted
 if (isset($_POST['login'])) {
 	include("../storescripts/connect_to_mysql.php");
     $manager = $_POST['username'];
     $password = $_POST['password'];
-	//$_SESSION['login_manager']=$username;
+	
     $result = mysqli_query($con, "SELECT id FROM admin WHERE username = '" . $manager. "' and password = '" . $password . "'");
 	$n = $result->num_rows;
-	//$row = mysql_fetch_array($result);
-	//$id = $row["id"];
+	
     if ($n != 0) {
-		//echo $n;
-		//$_SESSION["id"] = $id;
-		//$_SESSION["manager"] = $manager;
-		//$_SESSION["password"] = $password;
+		
 		echo "<script language='javascript' type='text/javascript'> location.href='http://localhost/DBproj/storeadmin/admin_index.php' </script>";
-        //$_SESSION['usr_id'] = $row['id'];
-        //$_SESSION['usr_name'] = $row['name'];
-        //header("Location: user_index.php");
-		//exit();
+        
     } else {
         $errormsg = "Invalid Username or Password!!!";
-		//header("Location: register.php");
     }
 }
 ?>

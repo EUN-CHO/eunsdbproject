@@ -7,34 +7,15 @@ if(isset($_SESSION["manager"])!=""){
 	exit();
 }
 
-/*
-$managerID = preg_replace('#[^0-9]#i', '', $_SESSION["id"]);
-$manager = preg_replace('#[^A-Za-z0-9]#i', '', $_SESSION["manager"]); 
-$password = preg_replace('#[^A-Za-z0-9]#i', '', $_SESSION["password"]); 
-
-include("../storescripts/connect_to_mysql.php"); 
-
-$mysql = "SELECT id FROM admin WHERE id='$managerID' AND username='$manager' AND password='$password' LIMIT 1";
-	
-$result = mysqli_query($con, $mysql);
-$existCount = mysqli_num_rows($result);
-		
-if ($existCount == 0) {
-	 echo "You are not an existing manager.";
-     exit();
-}
-*/
 ?>
 <?php 
-// Script Error Reporting
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ?>
 
 
 <?php 
-
-// Parse the form data and add inventory item to the system
 
 if (isset($_POST['product_name'])) {
 	$pid = mysqli_real_escape_string($con, $_POST['thisID']);
@@ -44,13 +25,11 @@ if (isset($_POST['product_name'])) {
 	$subcategory = mysqli_real_escape_string($con, $_POST['subcategory']);
 	$details = mysqli_real_escape_string($con, $_POST['details']);
 
-	// See if that product name is an identical match to another product in the system
 
 	$sql = mysql_query("UPDATE products SET product_name='$product_name', price='$price', details='$details', category='$category', subcategory='$subcategory' WHERE id='$pid'");
 
 	if ($_FILES['fileField']['tmp_name'] != "") {
 
-	    // Place image in the folder 
 
 	    $newname = "$pid.jpg";
 
@@ -65,7 +44,6 @@ if (isset($_POST['product_name'])) {
 ?>
 
 <?php 
-// Gather this product's full information for inserting automatically into the edit form below on page
 
 if (isset($_GET['pid'])) {
 	$targetID = $_GET['pid'];
@@ -75,14 +53,12 @@ if (isset($_GET['pid'])) {
     if ($productCount > 0) {
 	    while($row = mysqli_fetch_array($sql)){              
 			 $product_name = $row["product_name"];
-			 $price = $row["price"];
 			 $category = $row["category"];
 			 $subcategory = $row["subcategory"];
 			 $details = $row["details"];
 			 $date_added = strftime("%b %d, %Y", strtotime($row["date_added"]));
-        }
-
-    } else {
+			}
+        }else {
 	    echo "NO existance.";
 		exit();
     }
@@ -131,6 +107,7 @@ if (isset($_GET['pid'])) {
         <td><label>
           <select name="category" id="category">
           <option value="Clothing">Clothing</option>
+          <option value="Others">Others</option>
           </select>
         </label></td>
       </tr>
@@ -141,6 +118,7 @@ if (isset($_GET['pid'])) {
           <option value="Tops">Tops</option>
           <option value="Bottoms">Bottoms</option>
           <option value="Accesories">Accesories</option>
+          <option value="Shoes">Shoes</option>
           </select></td>
       </tr>
       <tr>

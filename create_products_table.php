@@ -12,13 +12,7 @@ $mysqlCommand = "CREATE TABLE products (
 			PRIMARY KEY (id),
 			UNIQUE KEY product_name (product_name)
 			)";
-/*	
-if (mysql_query($mysqlCommand)){
-	echo"Admin table succeccfully created!";
-} else{
-	echo"ERROR! Admin table not created.";
-}
-*/
+
 
  if ($con->query($mysqlCommand) === TRUE) {
     echo "Table created successfully";

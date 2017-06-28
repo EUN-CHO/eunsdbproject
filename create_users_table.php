@@ -9,13 +9,7 @@ $mysqlCommand = "CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1";
-/*	
-if (mysql_query($mysqlCommand)){
-	echo"Admin table succeccfully created!";
-} else{
-	echo"ERROR! Admin table not created.";
-}
-*/
+
 
  if ($con->query($mysqlCommand) == TRUE) {
     echo"Table created successfully";

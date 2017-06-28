@@ -8,13 +8,7 @@ $mysqlCommand = "CREATE TABLE admin (
 			last_login_date datetime NOT NULL,
 			PRIMARY KEY (id)
 			)";
-/*	
-if (mysql_query($mysqlCommand)){
-	echo"Admin table succeccfully created!";
-} else{
-	echo"ERROR! Admin table not created.";
-}
-*/
+
 
  if ($con->query($mysqlCommand) === TRUE) {
     echo "Table created successfully";
