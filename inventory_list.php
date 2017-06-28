@@ -32,6 +32,32 @@ ini_set('display_errors', '1');
 ?>
 
 <?php 
+// Delete Item Question to Admin, and Delete Product if they choose
+if (isset($_GET['deleteid'])) {
+	echo 'Will you delete product ID: ' . $_GET['deleteid'] . '? <a href="inventory_list.php?yesdelete=' . $_GET['deleteid'] . '">Yes</a> | <a href="inventory_list.php">No</a>';
+	exit();
+}
+
+if (isset($_GET['yesdelete'])) {
+	// remove item from system and delete its picture
+	// delete from database
+	$id_to_delete = $_GET['yesdelete'];
+	$sql = mysqli_query($con, "DELETE FROM products WHERE id='$id_to_delete' LIMIT 1") or die (mysqli_error());
+
+	// unlink the image from server
+	// Remove The Pic -------------------------------------------
+
+    $pictodelete = ("../inventory_images/$id_to_delete.jpg");
+    if (file_exists($pictodelete)) {
+       		    unlink($pictodelete);
+    }
+
+	header("location: inventory_list.php"); 
+    exit();
+}
+
+?>
+<?php 
 include("../storescripts/connect_to_mysql.php"); 
 // Parse the form data and add inventory item to the system
 if (isset($_POST['product_name'])) {	
@@ -63,7 +89,6 @@ if (isset($_POST['product_name'])) {
 	move_uploaded_file( $_FILES['fileField']['tmp_name'], "../inventory_images/$newname");
 
 	header("location: inventory_list.php"); 
-
     exit();
 }
 ?>
@@ -71,7 +96,7 @@ if (isset($_POST['product_name'])) {
 <?php 
 include("../storescripts/connect_to_mysql.php"); 
 $product_list = "";
-$sql = mysqli_query($con, "SELECT * FROM products ORDER BY date_added DESC");
+$sql = mysqli_query($con, "SELECT * FROM products ORDER BY date_added ASC");
 $productCount = $sql->num_rows;; 
 
 if ($productCount > 0) {
@@ -80,7 +105,7 @@ if ($productCount > 0) {
 			 $product_name = $row["product_name"];
 			 $price = $row["price"];
 			 $date_added = strftime("%b %d, %Y", strtotime($row["date_added"]));
-			 $product_list .= "Product ID: $id - <strong>$product_name</strong> - $$price - <em>Added $date_added</em> &nbsp; &nbsp; &nbsp; <a href='inventory_edit.php?pid=$id'>edit</a> &bull; <a href='inventory_list.php?deleteid=$id'>delete</a><br />";
+			 $product_list .= "Product ID: $id - <strong>$product_name</strong> - ₩$price - <em>Added $date_added</em> &nbsp; &nbsp; &nbsp; <a href='inventory_edit.php?pid=$id'>edit</a> &bull; <a href='inventory_list.php?deleteid=$id'>delete</a><br />";
     }
 } else{
 	$product_list = "No products listed in E.CHO STORE.";
@@ -101,7 +126,7 @@ if ($productCount > 0) {
 	<div id="pageContent"><br />
 	  <div align = 'right' style="margin-left:24px;"><a href="inventory_list.php#inventoryForm">ADD a New Item</a></div>
 		<div align="left" style="margin-left:24px;">
-	 		<h2>Inventory list</h2>
+ 		  <h2>Inventory list</h2>
 	      	<?php echo $product_list; ?>
 		</div>
     	<hr />
@@ -120,8 +145,8 @@ if ($productCount > 0) {
       	<tr>
 	        <td align="right">Product Price</td>
         <td><label>
-          $
-          <input name="price" type="text" id="price" size="12" />
+              <input name="price" type="text" id="price" size="12" />
+              ₩
         </label></td>
       </tr>
       <tr>
