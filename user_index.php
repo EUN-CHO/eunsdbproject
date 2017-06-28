@@ -28,7 +28,7 @@ if ($productCount > 0) {
 			 $date_added = strftime("%b %d, %Y", strtotime($row["date_added"]));
 			 $dynamicList .= '<table width="100%" border="0" cellspacing="0" cellpadding="6">
         <tr>
-          <td width="20%" valign="top"><a href="product.php?id=' . $id . '"><img style="border:#666 1px solid;" src="inventory_images/' . $id . '.jpg" alt="' . $product_name . '" width="80" height="100" border="1" /></a></td>
+          <td width="20%" valign="top"><a href="product.php?id=' . $id . '"><img style="border:#666 1px solid;" src="../inventory_images/' . $id . '.jpg" alt="' . $product_name . '" width="80" height="100" border="1" /></a></td>
           <td width="83%" valign="top">' . $product_name . '<br />
             ₩' . $price . '<br />
             <a href="../products.php?id=' . $id . '">Details</a></td>
