@@ -97,7 +97,7 @@ if (isset($_POST['product_name'])) {
 include("../storescripts/connect_to_mysql.php"); 
 $product_list = "";
 $sql = mysqli_query($con, "SELECT * FROM products ORDER BY date_added ASC");
-$productCount = $sql->num_rows;; 
+$productCount = $sql->num_rows;
 
 if ($productCount > 0) {
 	while($row = mysqli_fetch_array($sql)){ 
