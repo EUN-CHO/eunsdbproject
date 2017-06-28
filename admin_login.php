@@ -13,8 +13,13 @@ if (isset($_POST['login'])) {
 	//$_SESSION['login_manager']=$username;
     $result = mysqli_query($con, "SELECT id FROM admin WHERE username = '" . $manager. "' and password = '" . $password . "'");
 	$n = $result->num_rows;
+	//$row = mysql_fetch_array($result);
+	//$id = $row["id"];
     if ($n != 0) {
 		//echo $n;
+		//$_SESSION["id"] = $id;
+		//$_SESSION["manager"] = $manager;
+		//$_SESSION["password"] = $password;
 		echo "<script language='javascript' type='text/javascript'> location.href='http://localhost/DBproj/storeadmin/admin_index.php' </script>";
         //$_SESSION['usr_id'] = $row['id'];
         //$_SESSION['usr_name'] = $row['name'];
