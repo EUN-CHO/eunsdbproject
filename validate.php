@@ -1,23 +1,25 @@
-<?
-
-$myemail = "lvmclr2750@naver.com";
-$mypassword = "1111";
+<?php
+$cookie_name = "loggedin";
+include("../storescripts/connect_to_mysql.php");
 
 if(isset($_POST['login'])){
 	$email = $_POST['email'];
-	$password = $_POST['password'];
-	if($email == $myemail and $password == $mypassword){
-		if(isset($_POST['remember'])){
-			setcookie('email', $email, time()+60*60*7);
-			setcookie('password', $password, time()+60*60*7);
-		}
-		session_start();
-		$_SESSION['email'] = $email;
-		header("Location: user_index.php");
+	$pass = $_POST['password'];
+	
+	$phash = md5($pass);
+	
+	$sql = "SELECT * FROM users WHERE email='$email' AND password='$phash';";
+	
+	$result = mysqli_query($con, $sql);
+	$count = mysqli_num_rows($result);
+	
+	if($count==1){
+		$cookie_value = $email;
+		setcookie($cookie_name, $cookie_value, time()+(180));
+		header("Location: personal.php");
 	} else{
-		echo"Email or Password is INVLID! <br> Click Here to <a href='user_login.php'> LOGIN again. ";
+		echo "INVALID Email or Password!";
 	}
-} else{
-	header("Location: user_login.php");
 }
+
 ?>

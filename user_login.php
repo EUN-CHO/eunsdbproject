@@ -1,17 +1,3 @@
-<?php
-
-if(isset($_COOKIE['email']) and isset($_COOKIE['password'])){
-	$email = $_COOKIE['email'];
-	$password = $_COOKIE['password'];
-	
-	echo "<script>
-		document.getElementById('email').value = '$email';
-		document.getElementById('password').value = '$password';
-	</script>";
-}
-
-?>
-
 <!doctype html>
 <html><head>
 <meta charset="UTF-8">
@@ -43,7 +29,7 @@ if(isset($_COOKIE['email']) and isset($_COOKIE['password'])){
 
 							<div class="form-group">
 								<br />
-								<tr><td colspan="2" align="left"><input type="checkbox" name="remeber" value='1'>Remeber Me</td></tr>
+								<tr><td colspan="2" align="left">&nbsp;</td></tr>
 								<br />
 								<input type="submit" name="login" value="Login" />
 							</div>
