@@ -1,1 +1,1 @@
-<div id="pageFooter">Copyright</div>
+<div id="pageFooter">2014320059 EUN CHO</div>

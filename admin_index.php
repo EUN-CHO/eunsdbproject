@@ -39,7 +39,7 @@ if ($existCount == 0) {
 		<div align="left" style="margin-left:24px;">
 		  <p><strong><em>Hello E.CHO STORE manager. What would you like to do today?</em></strong></p>
 		  <p><a href="inventory_list.php">Manage inventory</a></p>
-		  <p><a href="#">Manage customers</a></p>
+		  <p><a href="user_view_list.php">View users</a></p>
 		  <p><a href="#">Manage payments</a></p> 
 		</div>
 		<br />

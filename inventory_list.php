@@ -71,7 +71,7 @@ if (isset($_POST['product_name'])) {
 
 	$sql = mysqli_query($con, "SELECT id FROM products WHERE product_name='$product_name' LIMIT 1");
 
-	$productMatch = $sql->num_rows;; // count the output amount
+	$productMatch = $sql->num_rows; // count the output amount
     if ($productMatch > 0) {
 		echo 'Sorry you tried to place a duplicate "Product Name" into the system, <a href="inventory_list.php">click here</a>';
 		exit();
