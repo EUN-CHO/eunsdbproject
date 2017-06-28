@@ -56,7 +56,7 @@ if (isset($_POST['signup'])) {
 <div align="center" id="mainWrapper">
 	<?php include_once("../template_header.php");?>
 	<div id="pageContent"><br />
-		<div align='left' class="container">
+		<div align='center' class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 well">
 					<form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">

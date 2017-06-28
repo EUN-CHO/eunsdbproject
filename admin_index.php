@@ -36,7 +36,7 @@ if ($existCount == 0) {
 <div align="center" id="mainWrapper">
 	<?php include_once("../template_header.php");?>
 	<div id="pageContent"><br />
-		<div align="left" style="margin-left:24px;">
+		<div align="center">
 		  <p><strong><em>Hello E.CHO STORE manager. What would you like to do today?</em></strong></p>
 		  <p><a href="inventory_list.php">Manage inventory</a></p>
 		  <p><a href="user_view_list.php">View users</a></p>

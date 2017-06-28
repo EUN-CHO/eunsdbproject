@@ -9,8 +9,10 @@
 <body>
 <div align="center" id="mainWrapper">
 	<?php include_once("template_header.php");?>
-	<div id="pageContent">Test</div>
+	<div id="pageContent">Ready to ENJOY SHOPPING at E.CHO STORE? <br/>Then please login(or sign up if you are not registered)!<br/></div>
 	<?php include_once("template_footer.php");?>
 </div>
 </body>
 </html>
+
+

@@ -124,7 +124,7 @@ if ($productCount > 0) {
 <div align="center" id="mainWrapper">
 	<?php include_once("../template_header.php");?>
 	<div id="pageContent"><br />
-	  <div align = 'right' style="margin-left:24px;"><a href="inventory_list.php#inventoryForm">ADD a New Item</a></div>
+	  <div align = 'right' style="margin-left:24px;"></div>
 		<div align="left" style="margin-left:24px;">
  		  <h2>Inventory list</h2>
 	      	<?php echo $product_list; ?>

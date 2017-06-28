@@ -1,1 +1,1 @@
-<div id="pageFooter">2014320059 EUN CHO</div>
+<div id="pageFooter">DBproject by 2014320059 EUN CHO</div>
